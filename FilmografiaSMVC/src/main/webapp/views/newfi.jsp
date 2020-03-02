@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width">
-<link href="menunewfi.css" rel="stylesheet" type="text/css">
+<link href="css/menunewfi.css" rel="stylesheet" type="text/css">
 
 <title>Inserisci il nuovo Film</title>
 </head>

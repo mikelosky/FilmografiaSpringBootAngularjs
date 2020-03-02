@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link href="menunewfi.css" rel="stylesheet" type="text/css">
+<link href="css/menunewfi.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrapper">

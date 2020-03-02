@@ -7,7 +7,7 @@
 <html>
 <head>
 
-<link href="menuindex.css" rel="stylesheet" type="text/css">
+<link href="css/menuindex.css" rel="stylesheet" type="text/css">
 <meta charset="ISO-8859-1" name="viewport"
 	content="width=device-width, initial-scale=1">
 

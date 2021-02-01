@@ -1,0 +1,23 @@
+<div id="wrapper">
+	<div id="subscribeBox">
+		<h2>
+			<span class="thin">
+				<p>Seleziona l`attore da rimuovere.</p>
+			</span>
+		</h2>
+		<div data-ng-controller="AttoriController as ctrl">
+			<form class="subscribeForm" data-ng-submit="ctrl.remove(ctrl.user.id_attori)">
+
+				<p>Seleziona Attori</p>
+				<select id="id_attori" name="id_attori" data-ng-model="ctrl.user.id_attori">
+					<option></option>
+					<option data-ng-repeat="u in ctrl.users" value="{{u.id}}">
+						"{{u.nome}}"</option>
+
+				</select>
+
+				<input id="submit" type="submit" value="Elimina">
+			</form>
+		</div>
+	</div>
+</div>

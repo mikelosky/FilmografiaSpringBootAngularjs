@@ -1,0 +1,27 @@
+<div id="wrapper">
+	<div id="subscribeBox">
+		<h2>
+			<span class="thin">
+				<p>Seleziona la casa produttrice da
+					modificare.</p>
+			</span>
+		</h2>
+		<p>Seleziona la casa produttrice</p>
+		<div data-ng-controller="CaseController as ctrl">
+			<form class="subscribeForm" ng-submit="ctrl.findbyid()">
+
+				<!-- <div var="current" data-ng-repeat="u in ctrl.users"></div> -->
+				<select id="id_casa_prod" name="id" data-ng-model="ctrl.user.id_casa_prod">
+					<option></option>
+
+					<option data-ng-repeat="u in ctrl.users" value="{{u.id}}">
+						"{{u.nome}}"</option>
+
+				</select>
+
+			</form>
+		</div>
+		<!-- Step 3: add a submit button here -->
+		<input id="submit" type="submit" value="Modifica" href="#!/modcasaprod">
+	</div>
+</div>

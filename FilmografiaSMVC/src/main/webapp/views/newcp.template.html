@@ -1,0 +1,28 @@
+<div id="wrapper">
+
+	<div id="subscribeBox">
+		<h2>
+			<span class="thin">
+				<p>Inserire la nuova Casa Produttrice</p>
+			</span>
+		</h2>
+
+		<!-- Start Here: Web Form tutorial -->
+		<div data-ng-controller="CaseController as ctrl">
+			<form ng-submit="ctrl.submit()" class="subscribeForm" >
+				
+				<!-- <input type="hidden" data-ng-model="ctrl.user.id_cas_prod" /> -->
+
+				<input id="nome" type="text" placeholder="Nome Casa Produttrice" data-ng-model="ctrl.user.nome" required>
+
+				<input id="sede_principale" type="text" placeholder="Nome Sede Principale" data-ng-model="ctrl.user.sede_principale" required>
+				
+				<input id="anno_fondazione" type="number" placeholder="Anno Fondazione" data-ng-model="ctrl.user.anno_fondazione" required>
+				
+				<input id="img" type="text" placeholder="Inserisci path Immagine" data-ng-model="ctrl.user.img">
+				
+				<input id="submit" type="submit" value="Inserisci">
+			</form>
+		</div>
+	</div>
+</div>

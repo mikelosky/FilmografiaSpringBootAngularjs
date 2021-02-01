@@ -1,0 +1,70 @@
+<div id="wrapper">
+	<div id="subscribeBox">
+		<h2>
+			<span class="thin">
+				<p>Inserire il nuovo Film</p>
+			</span>
+		</h2>
+		<div data-ng-controller="FilmController as ctrl">
+			<form class="subscribeForm" ng-submit="ctrl.submit()">
+
+				<input id="nome" type="text" placeholder="Nome Film" data-ng-model="ctrl.user.nome" required>
+
+				<input id="anno_uscita" type="number" placeholder="Anno Uscita" data-ng-model="ctrl.user.anno_uscita"
+					required>
+				<input id="incassi" type="number" placeholder="Incassi Totali" data-ng-model="ctrl.user.incassi"
+					required>
+
+				<p>Seleziona la casa produttrice</p>
+				<div data-ng-controller="CaseController as ctrlcp">
+					<!-- <div var="current" data-ng-repeat="u in ctrl.users"></div> -->
+					<select id="id_casa_prod" name="id" data-ng-model="ctrl.user.id_casa_prod">
+						<option></option>
+
+						<option data-ng-repeat="u in ctrlcp.users" value="{{u.id}}">
+							"{{u.nome}}"</option>
+
+					</select>
+				</div>
+				<!-- <select id="id_casa_prod" name="id_casa_prod">
+					<option></option>
+					<c:forEach var="current" items="${listCP}">
+						<option value="${current.getId()}">
+							${current.getNome()}</option>
+					</c:forEach>
+
+				</select> -->
+
+				<p>Seleziona gli attori</p>
+				<div data-ng-controller="AttoriController as ctrlat">
+					<!-- <div var="current" data-ng-repeat="u in ctrl.users"></div> -->
+					<select id="id_attori" name="id" data-ng-model="ctrl.user.id_attori" multiple>
+						<option></option>
+
+						<option data-ng-repeat="u in ctrlat.users" value="{{u.id}}">
+							"{{u.nome}}"</option>
+
+					</select>
+				</div>
+
+				<!-- <select multiple="multiple" id="my-select" name="attori_list" size="${fn:length(listA)}">
+					<c:forEach var="currenta" items="${listA}">
+						<option value="${currenta.getId()}">${currenta.getNome()}</option>
+					</c:forEach>
+				</select> -->
+
+
+
+				<!-- <%-- <c:forEach var="currenta" items="${listA}">
+					<input type="checkbox" name="id_attori"
+						value="${currenta.getid_Attori()}" /> ${currenta.getNome()} <br>
+				</c:forEach> --%> -->
+
+
+				<input id="img" type="text" placeholder="Inserisci path Immagine" data-ng-model="ctrl.user.img">
+
+				<input id="submit" type="submit" value="Inserisci">
+			</form>
+		</div>
+	</div>
+</div>

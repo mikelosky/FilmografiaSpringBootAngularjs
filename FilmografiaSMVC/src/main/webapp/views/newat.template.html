@@ -1,0 +1,26 @@
+<div id="wrapper">
+
+	<div id="subscribeBox">
+		<h2>
+			<span class="thin"></span>
+		</h2>
+		<p>Inserire in nuovo Attore</p>
+
+		<!-- Start Here: Web Form tutorial -->
+		<div data-ng-controller="AttoriController as ctrl">
+			<form class="subscribeForm" ng-submit="ctrl.submit()">
+
+				<input id="nome" type="text" placeholder="Nome Attore" data-ng-model="ctrl.user.nome" required>
+				<input id="cognome" type="text" placeholder="Nome Cognome" data-ng-model="ctrl.user.cognome" required>
+
+				<input id="anno_nascita" type="number" placeholder="Anno Nascita" data-ng-model="ctrl.user.anno_nascita" required>
+				<input id="anno_inizio_carriera" type="number" placeholder="Anno Inizio" data-ng-model="ctrl.user.anno_inizio_carriera"	required>
+
+				<input id="img" type="text" placeholder="Inserisci path Immagine" data-ng-model="ctrl.user.img">
+
+				<input id="submit" type="submit" value="Inserisci">
+
+			</form>
+		</div>
+	</div>
+</div>

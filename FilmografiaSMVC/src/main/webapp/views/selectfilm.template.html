@@ -1,0 +1,24 @@
+<div id="wrapper">
+	<div id="subscribeBox">
+		<h2>
+			<span class="thin">
+				<p>Seleziona il film da modificare.</p>
+			</span>
+		</h2>
+
+		<div class="subscribeForm" name="Subscription Form">
+			<div data-ng-controller="FilmController as ctrl">
+				<select id="id_casa_prod" name="id">
+					<option></option>
+					
+						<option data-ng-repeat="u in ctrl.users" value="{{u.id}}">
+							"{{u.nome}}"</option>
+					
+
+				</select>
+			</div>
+			<!-- Step 3: add a submit button here -->
+			<input id="submit" type="submit" value="Modifica">
+		</div>
+	</div>
+</div>

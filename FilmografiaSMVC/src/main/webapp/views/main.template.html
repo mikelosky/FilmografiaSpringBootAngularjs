@@ -1,0 +1,32 @@
+<div id="mySidebar" class="sidebar">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	<a href="#!/newcp">New Casa Produttrice</a> <a href="#!/newat">New Attore</a>
+	<a href="#!/newfi">New Film</a> <a href="#!/selectcasaprod">Mod Casa
+		Produttrice</a> <a href="#!/selectattori">Mod Attore</a> <a
+		href="#!/selectfilm">Mod Film</a> <a href="#!/remselectattori">Rem
+		Attore</a> <a href="#!/remselectcasaproduttrici">Rem Casa Produttrice</a> <a
+		href="#!/remselectfilm">Rem Film</a> <a href="#">Contact</a>
+</div>
+
+
+<div class="caseproduttrici">
+	<div data-ng-controller="CaseController as ctrl">
+
+		<div class="container" data-ng-repeat="u in ctrl.users">
+			<div class="img-container">
+				<img data-ng-src="{{u.img}}" alt="">
+			</div>
+			<div class="user-info">
+				<h2>
+					"{{u.nome}}"
+				</h2>
+				<span>"{{u.annoFondazione}}"</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="main">
+	<button class="openbtn" onclick="toggle()">Toggle Sidebar</button>
+
+</div>

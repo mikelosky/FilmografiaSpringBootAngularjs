@@ -1,0 +1,24 @@
+<div id="wrapper">
+	<div id="subscribeBox">
+		<h2>
+			<span class="thin">
+				<p>Seleziona il film da rimuovere.</p>
+			</span>
+		</h2>
+		<div data-ng-controller="FilmController as ctrl">
+			<form class="subscribeForm" ng-submit="ctrl.remove(ctrl.user.id_attori)">
+
+				<p>Seleziona Film</p>
+				<select id="id_attori" name="id_attori" data-ng-model="ctrl.user.id_attori">
+					<option></option>
+					<option data-ng-repeat="u in ctrl.users" value="{{u.id}}">
+						"{{u.nome}}"</option>
+
+				</select>
+
+				<!-- Step 3: add a submit button here -->
+				<input id="submit" type="submit" value="Elimina">
+			</form>
+		</div>
+	</div>
+</div>

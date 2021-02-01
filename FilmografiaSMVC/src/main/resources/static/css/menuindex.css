@@ -13,6 +13,9 @@ body {
 
 .container {
   position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  right: 0%;
   height: 500px;
   width: 400px;
   overflow: hidden;
@@ -251,6 +254,9 @@ button:hover:before,button:hover:after{
 
 /* The button used to open the sidebar */
 .openbtn {
+  position: absolute;
+  top: 750px;
+  right: 46%;
   font-size: 20px;
   cursor: pointer;
   background-color: #111;
@@ -265,6 +271,7 @@ button:hover:before,button:hover:after{
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
+  
   transition: margin-left .5s; /* If you want a transition effect */
   padding: 20px;
 }

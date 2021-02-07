@@ -23,7 +23,12 @@ public class CaseProduttriciController {
 	
 	@Autowired
 	private CaseProduttriciService caseprodservice;
-
+	
+	@GetMapping("/")
+    public String index(){
+        return "index";
+    }
+	
 	@GetMapping("/all")
 	public List<CaseProduttrici> findAll(){
 		return caseprodservice.findAll();

@@ -1,11 +1,13 @@
 'use strict';
  
-angular.module('filmografy').controller('CaseController', ['$scope', 'CaseService', function($scope, CaseService) {
+angular.module('filmografy').controller('CaseController', ['$scope',  '$location', 'CaseService', function($scope, $location, CaseService) {
     var self = this;
     self.user={id_cas_prod:null,nome:'',anno_fondazione:'',sede_principale:'',img:''};
-    self.userid={id_cas_prod:'',nome:'',anno_fondazione:'',sede_principale:'',img:''};
     self.users=[];
- 
+    
+    self.idkey=$location.search();
+    
+    self.pass = pass;
     self.findId = findId;
     self.submit = submit;
     self.edit = edit;
@@ -14,6 +16,7 @@ angular.module('filmografy').controller('CaseController', ['$scope', 'CaseServic
  
  
     fetchAllUsers();
+    
  
     function fetchAllUsers(){
         CaseService.fetchAllUsers()
@@ -69,21 +72,30 @@ angular.module('filmografy').controller('CaseController', ['$scope', 'CaseServic
     }
 
     function findId(id) {
+    	console.log('id to be find', id);
         CaseService.findId(id)
             .then(
             function(d) {
-                self.userid = d;
+                self.user = d;
             },
             function(errResponse){
                 console.error('Error while fetching User by id');
             }
-        );   
+        );        
+    }
+    
+    function pass(id){
+    	self.idsafe = id;
+    	$location.path('/modcasaprod/').search({idkey: id});
     }
  
-    function edit(id){
+    function edit(){
+    	fetchAllUsers();
+    	var id = self.idkey.idkey;
+    	findId(id);
         console.log('id to be edited', id);
         for(var i = 0; i < self.users.length; i++){
-            if(self.users[i].id === id) {
+            if(self.users[i].id == id) {
                 self.user = angular.copy(self.users[i]);
                 break;
             }

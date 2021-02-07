@@ -8,7 +8,7 @@
 		</h2>
 		<p>Seleziona la casa produttrice</p>
 		<div data-ng-controller="CaseController as ctrl">
-			<form class="subscribeForm" ng-submit="ctrl.findbyid()">
+			<form class="subscribeForm" ng-submit="ctrl.pass(ctrl.user.id_casa_prod)">
 
 				<!-- <div var="current" data-ng-repeat="u in ctrl.users"></div> -->
 				<select id="id_casa_prod" name="id" data-ng-model="ctrl.user.id_casa_prod">
@@ -18,10 +18,10 @@
 						"{{u.nome}}"</option>
 
 				</select>
-
+				<input id="submit" type="submit" value="Modifica" href="#!/modcasaprod">
 			</form>
 		</div>
 		<!-- Step 3: add a submit button here -->
-		<input id="submit" type="submit" value="Modifica" href="#!/modcasaprod">
+		
 	</div>
 </div>

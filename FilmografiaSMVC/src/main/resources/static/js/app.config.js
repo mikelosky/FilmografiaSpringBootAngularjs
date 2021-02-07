@@ -30,6 +30,9 @@ app.config(function config($routeProvider, $locationProvider, $httpProvider) {
 		.when('/modattore', {
 			template: '<modattore></modattore>'
 		})
+		.when('/modcasaprod/:idkey', {
+			template: '<modcasaprod></modcasaprod>'
+		})
 		.when('/modcasaprod', {
 			template: '<modcasaprod></modcasaprod>'
 		})

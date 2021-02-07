@@ -12,11 +12,16 @@
 	<groupId>it.cybsec</groupId>
 	<artifactId>FilmografiaSMVC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>FilmografiaSMVC</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>13</java.version>
+		<deploy.jboss.host>127.0.0.1</deploy.jboss.host>
+		<deploy.jboss.port>9990</deploy.jboss.port>
+		<deploy.jboss.username>mik</deploy.jboss.username>
+		<deploy.jboss.password>admin</deploy.jboss.password>
 	</properties>
 
 	<dependencies>
@@ -45,6 +50,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tomcat.embed</groupId>
+					<artifactId>tomcat-embed-websocket</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -62,12 +73,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
+
 		</dependency>
 	</dependencies>
 
@@ -76,6 +82,26 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>2.0.2.Final</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<filename>${project.build.finalName}.war</filename>
+					<hostname>${deploy.jboss.host}</hostname>
+					<port>${deploy.jboss.port}</port>
+					<username>${deploy.jboss.username}</username>
+					<password>${deploy.jboss.password}</password>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

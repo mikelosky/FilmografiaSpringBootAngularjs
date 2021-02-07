@@ -4,23 +4,27 @@
 		<h2>
 			<span class="thin">
 				<p>Modifica la Casa Produttrice</p>
+
+				
 			</span>
 		</h2>
 		<div data-ng-controller="CaseController as ctrl">
-			<form class="subscribeForm" ng-submit="ctrl.submit()">
-				<input id="id" type="hidden" placeholder="ctrl.userid.id_cas_prod" data-ng-model="ctrl.user.id_cas_prod">
-
-				<input id="nome" type="text" placeholder="ctrl.userid.nome" data-ng-model="ctrl.user.nome" required>
-				
-				<input id="sede_principale" type="text" placeholder="ctrl.userid.sede_principale" data-ng-model="ctrl.user.sede_principale" required>
-
-				<input id="anno_fondazione" type="number" placeholder="ctrl.userid.anno_fondazione" data-ng-model="ctrl.user.anno_fondazione" required>
-
-				<input id="img" type="text" placeholder="ctrl.userid.img" data-ng-model="ctrl.user.img">
-
-				<input id="submit" type="submit" value="Inserisci">
-
-			</form>
+			<div data-ng-init=ctrl.edit()>
+				<form class="subscribeForm" ng-submit="ctrl.submit()">
+					<input id="id" type="hidden" placeholder={{ctrl.userid.id_cas_prod}} data-ng-model="ctrl.user.id_cas_prod">
+	
+					<input id="nome" type="text" placeholder={{ctrl.user.nome}} data-ng-model="ctrl.user.nome" required>
+					
+					<input id="sede_principale" type="text" placeholder={{ctrl.user.sedePrincipale}} data-ng-model="ctrl.user.sede_principale" required>
+	
+					<input id="anno_fondazione" type="number" placeholder={{ctrl.user.annoFondazione}} data-ng-model="ctrl.user.anno_fondazione" required>
+	
+					<input id="img" type="text" placeholder={{ctrl.user.img}} data-ng-model="ctrl.user.img">
+	
+					<input id="submit" type="submit" value="Inserisci">
+	
+				</form>
+			</div>
 		</div>
 	</div>
 </div>

@@ -25,6 +25,7 @@ public class ControllerView {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String viewCaseProduttrici(ModelMap caseproduttrici) {
 		caseproduttrici.addAttribute("listCP", caseprcontr.findAll());
+		System.out.println("asdasdasd");
 		return "index";
 	}
 	
